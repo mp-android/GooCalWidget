@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="header_day_of_week">false</item>
+    <item type="id" name="header_row">false</item>
+    <item type="id" name="box_layout">false</item>
+    <item type="id" name="box_date">false</item>
+    <item type="id" name="box_event_more_count">false</item>
+    <item type="id" name="month_widget_layout">false</item>
+    <item type="id" name="week_widget_layout">false</item>
+    <item type="id" name="day_widget_layout">false</item>
+    <item type="id" name="box_event_1">false</item>
+    <item type="id" name="box_event_2">false</item>
+    <item type="id" name="box_event_3">false</item>
+    <item type="id" name="box_event_4">false</item>
+    <item type="id" name="box_event_5">false</item>
+    <item type="id" name="box_row_1">false</item>
+    <item type="id" name="box_row_2">false</item>
+    <item type="id" name="box_row_3">false</item>
+    <item type="id" name="box_row_4">false</item>
+    <item type="id" name="box_row_5">false</item>
+    <item type="id" name="box_row_6">false</item>
+    <item type="id" name="spacer_y">false</item>
+    <item type="id" name="spacer_x">false</item>
+    <item type="id" name="spacer_x_short">false</item>
+</resources>

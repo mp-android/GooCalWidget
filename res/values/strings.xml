@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GooCal Widget</string>
+    <string name="month_widget_name">GooCal (4x4)</string>
+    <string name="week_widget_name">GooCal (4x1)</string>
+    <string name="day_widget_name">GooCal (1x1)</string>
+
+    <string name="pref_menu_common_headertitle">Common Setting</string>
+    <string name="pref_launch_app_info_title">Launch Application</string>
+    <string name="pref_launch_app_info_summary">launch APP on widget tap.</string>
+    <string name="pref_holiday_calendar_title">Holiday Calendar</string>
+    <string name="pref_holiday_calendar_summary">Color of date, background will become red.\nWhen the widget will be updated next time,it becomes effective.</string>
+    <string name="pref_box_bgcolor_headertitle">Day of week Color</string>
+    <string name="pref_box_bgcolor_sunday_title">Sunday</string>
+    <string name="pref_box_bgcolor_monday_title">Monday</string>
+    <string name="pref_box_bgcolor_tuesday_title">Tuesday</string>
+    <string name="pref_box_bgcolor_wednesday_title">Wednesday</string>
+    <string name="pref_box_bgcolor_thursday_title">Thursday</string>
+    <string name="pref_box_bgcolor_friday_title">Friday</string>
+    <string name="pref_box_bgcolor_saturday_title">Saturday</string>
+
+    <string name="pref_menu_month_headertitle">Month Widget Setting</string>
+    <string name="pref_first_day_Of_week_title">First Day Of Week</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.madroom.gcw"
+    android:versionCode="13"
+    android:versionName="1.3.9">
+
+    <uses-sdk android:minSdkVersion="8" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+
+        <activity android:name=".activity.PrefActivity" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+<!-- 
+        <receiver android:name=".widget.MonthWidget" android:label="@string/month_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/month_widget" />
+        </receiver>
+        <service android:name=".widget.MonthWidget$MyService">
+            <intent-filter>
+                <action android:name="net.madroom.gcw.action.CLICK_MONTH" />
+            </intent-filter>
+        </service>
+ -->
+
+        <receiver android:name=".widget.WeekWidget" android:label="@string/week_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/week_widget" />
+        </receiver>
+        <service android:name=".widget.WeekWidget$MyService">
+            <intent-filter>
+                <action android:name="net.madroom.gcw.action.CLICK_WEEK" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".widget.DayWidget" android:label="@string/day_widget_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider" android:resource="@xml/day_widget" />
+        </receiver>
+        <service android:name=".widget.DayWidget$MyService">
+            <intent-filter>
+                <action android:name="net.madroom.gcw.action.CLICK_DAY" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>

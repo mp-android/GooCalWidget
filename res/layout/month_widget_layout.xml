@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/month_widget_layout"
+    style="@style/MonthWidget.WidgetLayout"
+    >
+    <LinearLayout
+        android:id="@id/header_row"
+        style="@style/MonthWidget.HeaderRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_1"
+        style="@style/MonthWidget.BoxRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_2"
+        style="@style/MonthWidget.BoxRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_3"
+        style="@style/MonthWidget.BoxRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_4"
+        style="@style/MonthWidget.BoxRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_5"
+        style="@style/MonthWidget.BoxRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_6"
+        style="@style/MonthWidget.BoxRow"
+        />
+</LinearLayout>

@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MonthWidget Style -->
+    <style name="MonthWidget.WidgetLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="MonthWidget.HeaderRow" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="MonthWidget.BoxRow" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MonthWidget.Dummy" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="MonthWidget.HeaderLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minWidth">41dip</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#999999</item>
+    </style>
+    <style name="MonthWidget.HeaderDayOfWeek" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <style name="MonthWidget.BoxLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minWidth">41dip</item>
+        <item name="android:minHeight">45dip</item>
+    </style>
+    <style name="MonthWidget.BoxHeader" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="MonthWidget.BoxDate" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">21dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+    <style name="MonthWidget.BoxEventMoreCount" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">20dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textColor">#999900</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="MonthWidget.BoxEvent" parent="android:Theme">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="MonthWidget.SpacerXShort" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">1dip</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="MonthWidget.SpacerX" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">1dip</item>
+        <item name="android:minHeight">45dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="MonthWidget.SpacerY" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">41dip</item>
+        <item name="android:minHeight">1dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+
+    <!-- WeekWidget Style -->
+    <style name="WeekWidget.WidgetLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="WeekWidget.HeaderRow" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="WeekWidget.BoxRow" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WeekWidget.Dummy" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="WeekWidget.HeaderLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minWidth">41dip</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#999999</item>
+    </style>
+    <style name="WeekWidget.HeaderDayOfWeek" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <style name="WeekWidget.BoxLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minWidth">41dip</item>
+        <item name="android:minHeight">57dip</item>
+    </style>
+    <style name="WeekWidget.BoxHeader" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="WeekWidget.BoxDate" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">21dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+    <style name="WeekWidget.BoxEventMoreCount" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">15dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textColor">#999900</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="WeekWidget.BoxEvent" parent="android:Theme">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="WeekWidget.SpacerXShort" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">1dip</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="WeekWidget.SpacerX" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">1dip</item>
+        <item name="android:minHeight">57dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="WeekWidget.SpacerY" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">41dip</item>
+        <item name="android:minHeight">1dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+
+    <!-- DayWidget Style -->
+    <style name="DayWidget.WidgetLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="DayWidget.HeaderRow" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="DayWidget.BoxRow" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="DayWidget.Dummy" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="DayWidget.HeaderLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minWidth">71dip</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">#999999</item>
+    </style>
+    <style name="DayWidget.HeaderDayOfWeek" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+
+    <style name="DayWidget.BoxLayout" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:minWidth">71dip</item>
+        <item name="android:minHeight">57dip</item>
+    </style>
+    <style name="DayWidget.BoxHeader" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="DayWidget.BoxDate" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">36dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+    </style>
+    <style name="DayWidget.BoxEventMoreCount" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">35dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:textColor">#999900</item>
+        <item name="android:gravity">right</item>
+    </style>
+    <style name="DayWidget.BoxEvent" parent="android:Theme">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:textSize">9dip</item>
+        <item name="android:scrollHorizontally">true</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="DayWidget.SpacerXShort" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">1dip</item>
+        <item name="android:minHeight">13dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="DayWidget.SpacerX" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">1dip</item>
+        <item name="android:minHeight">57dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+    <style name="DayWidget.SpacerY" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:minWidth">71dip</item>
+        <item name="android:minHeight">1dip</item>
+        <item name="android:background">#000000</item>
+    </style>
+</resources>

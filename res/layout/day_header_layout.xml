@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/DayWidget.Dummy"
+    >
+    <LinearLayout
+        style="@style/DayWidget.HeaderLayout"
+        >
+        <TextView
+            android:id="@id/header_day_of_week"
+            style="@style/DayWidget.HeaderDayOfWeek"
+            />
+        <LinearLayout
+            style="@style/DayWidget.SpacerY"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@id/spacer_x_short"
+        style="@style/DayWidget.SpacerXShort"
+        />
+</LinearLayout>

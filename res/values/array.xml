@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="first_day_Of_week_entries">
+        <item>Sunday</item>
+        <item>Monday</item>
+<!-- 
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+ -->
+    </string-array>
+    <string-array name="first_day_Of_week_entryvalues">
+        <item>1</item>
+        <item>2</item>
+<!-- 
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+ -->
+    </string-array>
+    <string-array name="box_bgcolor_entries">
+        <item>White</item>
+        <item>Blue</item>
+        <item>Red</item>
+    </string-array>
+    <string-array name="box_bgcolor_entryvalues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

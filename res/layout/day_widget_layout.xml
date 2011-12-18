@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/day_widget_layout"
+    style="@style/DayWidget.WidgetLayout"
+    >
+    <LinearLayout
+        android:id="@id/header_row"
+        style="@style/DayWidget.HeaderRow"
+        />
+    <LinearLayout
+        android:id="@id/box_row_1"
+        style="@style/DayWidget.BoxRow"
+        />
+</LinearLayout>
