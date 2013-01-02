@@ -6,37 +6,14 @@ import net.madroom.common.CommonUtil;
 import net.madroom.gcw.conf.WidgetConf;
 import android.content.Context;
 import android.database.Cursor;
-import android.provider.Calendar.Calendars;
+import android.provider.CalendarContract.Calendars;
 
 public class CalendarsEntity {
 
-    /**
-    _id
-    _sync_account
-    _sync_account_type
-    _sync_id
-    _sync_version
-    _sync_time
-    _sync_local_id
-    _sync_dirty
-    _sync_mark
-    url
-    name
-    displayName
-    hidden
-    color
-    access_level
-    selected
-    sync_events
-    location
-    timezone
-    ownerAccount
-    organizerCanRespond
-    **/
-
     private final String[] PROJECTION = new String[] {
             Calendars._ID,
-            Calendars.DISPLAY_NAME,
+            Calendars.CALENDAR_DISPLAY_NAME,
+            Calendars.VISIBLE
     };
 
     private long id;
@@ -53,14 +30,17 @@ public class CalendarsEntity {
     }
 
     public ArrayList<CalendarsEntity> getCalendarsEntitiesByDB(Context context) {
-        Cursor c = Calendars.query(context.getContentResolver(), PROJECTION,
-                Calendars.SELECTED + "!=0", Calendars.DISPLAY_NAME + " asc");
+    	Cursor c = context.getContentResolver().query(
+    			Calendars.CONTENT_URI, PROJECTION,
+    			Calendars.VISIBLE + "!=0",
+    			null,
+    			Calendars.CALENDAR_DISPLAY_NAME + " asc");
 
         if(c.moveToFirst()) {
             do {
                 CalendarsEntity calendarsEntity = new CalendarsEntity();
                 calendarsEntity.setId(c.getLong(c.getColumnIndex(Calendars._ID)));
-                calendarsEntity.setDisplayName(c.getString(c.getColumnIndex(Calendars.DISPLAY_NAME)));
+                calendarsEntity.setDisplayName(c.getString(c.getColumnIndex(Calendars.CALENDAR_DISPLAY_NAME)));
                 calendarsEntities.add(calendarsEntity);
             } while (c.moveToNext());
         }

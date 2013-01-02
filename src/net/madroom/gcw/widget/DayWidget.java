@@ -20,7 +20,7 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.provider.Calendar.Instances;
+import android.provider.CalendarContract.Instances;
 import android.widget.RemoteViews;
 
 public class DayWidget extends AppWidgetProvider {

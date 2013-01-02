@@ -50,7 +50,7 @@ public class WidgetConf {
     public static final String ACTION_CLICK_MONTH = "net.madroom.gcw.action.CLICK_MONTH";
     public static final String ACTION_CLICK_WEEK = "net.madroom.gcw.action.CLICK_WEEK";
     public static final String ACTION_CLICK_DAY = "net.madroom.gcw.action.CLICK_DAY";
-    public static final String ANDROID_CALENDAR_PACKAGE_NAME = "com.android.calendar";
+    public static final String ANDROID_CALENDAR_PACKAGE_NAME = "com.google.android.calendar";
 
     public static final String LAUNCH_APP_INFO_DELIMITER = ",";
 

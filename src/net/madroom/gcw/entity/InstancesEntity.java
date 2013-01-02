@@ -10,65 +10,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.preference.PreferenceManager;
-import android.provider.Calendar.Instances;
-import android.text.TextUtils;
+import android.provider.CalendarContract.Instances;
 
 public class InstancesEntity {
-
-    /**
-    originalEvent
-    ownerAccount
-    endDay
-    visibility
-    endMinute
-    rrule
-    event_id
-    lastDate
-    hasAlarm
-    guestsCanModify
-    transparency
-    rdate
-    exrule
-    guestsCanSeeGuests
-    title
-    dtstart
-    selected
-    timezone
-    _id
-    hasAttendeeData
-    commentsUri
-    startDay
-    description
-    htmlUri
-    end
-    startMinute
-    hasExtendedProperties
-    calendar_id
-    eventLocation
-    dtend
-    access_level
-    allDay
-    organizer
-    originalAllDay
-    deleted
-    url
-    begin
-    originalInstanceTime
-    duration
-    color
-    selfAttendeeStatus
-    guestsCanInviteOthers
-    exdate
-    eventStatus
-    eventTimezone
-    **/
 
     private final String[] PROJECTION = new String[] {
         Instances.BEGIN,
         Instances.END,
         Instances.TITLE,
         Instances.ALL_DAY,
-        Instances.COLOR,
+        Instances.CALENDAR_COLOR,
         Instances.CALENDAR_ID
     };
 
@@ -108,22 +59,10 @@ public class InstancesEntity {
     public ArrayList<InstancesEntity> getInstancesEntitiesByDB(Context context, long begin, long end) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
 
-        String where = "(" + Instances.ALL_DAY + "=0" +")or" + "(("+ Instances.ALL_DAY + "=1)and(" +
-            "(" + begin + "<=" + Instances.BEGIN +" and " + Instances.BEGIN + "<" + end + ") or " +
-            "(" + Instances.BEGIN + "<" + begin +" and " + end + "<=" + Instances.END + ")))";
-
-        String orderby =
-            "case " + Instances.ALL_DAY + " when 1 then 1 else 2 end asc," + Instances.SORT_CALENDAR_VIEW;
-
         String holidayCalendarId =
             pref.getString(PrefConf.KEY_HOLIDAY_CALENDAR, PrefConf.DEF_HOLIDAY_CALENDAR);
 
-        if(!TextUtils.isEmpty(holidayCalendarId))
-            orderby =
-                "case " + Instances.CALENDAR_ID + " when " + holidayCalendarId + " then 1 else 2 end asc," + orderby;
-
-        Cursor c = Instances.query(context.getContentResolver(), PROJECTION,
-                begin, end, where, orderby);
+        Cursor c = Instances.query(context.getContentResolver(), PROJECTION, begin, end);
 
         if(c.moveToFirst()) {
             do {
@@ -132,7 +71,7 @@ public class InstancesEntity {
                 instancesEntity.setEnd(c.getLong(c.getColumnIndex(Instances.END)));
                 instancesEntity.setTitle(c.getString(c.getColumnIndex(Instances.TITLE)));
                 instancesEntity.setAllDay(c.getInt(c.getColumnIndex(Instances.ALL_DAY))!=0);
-                instancesEntity.setColor(c.getInt(c.getColumnIndex(Instances.COLOR)));
+                instancesEntity.setColor(c.getInt(c.getColumnIndex(Instances.CALENDAR_COLOR)));
                 instancesEntity.setHoliday(c.getString(c.getColumnIndex(Instances.CALENDAR_ID)).equals(holidayCalendarId));
 
                 CalendarUtil calUtil = new CalendarUtil(
