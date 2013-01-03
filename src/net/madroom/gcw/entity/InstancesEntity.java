@@ -65,33 +65,51 @@ public class InstancesEntity {
         Cursor c = Instances.query(context.getContentResolver(), PROJECTION, begin, end);
 
         if(c.moveToFirst()) {
-            do {
-                InstancesEntity instancesEntity = new InstancesEntity();
-                instancesEntity.setBegin(c.getLong(c.getColumnIndex(Instances.BEGIN)));
-                instancesEntity.setEnd(c.getLong(c.getColumnIndex(Instances.END)));
-                instancesEntity.setTitle(c.getString(c.getColumnIndex(Instances.TITLE)));
-                instancesEntity.setAllDay(c.getInt(c.getColumnIndex(Instances.ALL_DAY))!=0);
-                instancesEntity.setColor(c.getInt(c.getColumnIndex(Instances.CALENDAR_COLOR)));
-                instancesEntity.setHoliday(c.getString(c.getColumnIndex(Instances.CALENDAR_ID)).equals(holidayCalendarId));
+        	boolean hasHoliday = false;
 
-                CalendarUtil calUtil = new CalendarUtil(
-                        false, instancesEntity.getBegin());
-                instancesEntity.setBeginYear(calUtil.mYear);
-                instancesEntity.setBeginMonth(calUtil.mMonth);
-                instancesEntity.setBeginMonthDisp((calUtil.mMonth + 1) +"");
-                instancesEntity.setBeginDate(calUtil.mDate);
-                instancesEntity.setBeginHourOfDay(calUtil.mHourOfDay);
-                instancesEntity.setBeginMinute(calUtil.mMinute);
+        	do {
+            	long cBegin = c.getLong(c.getColumnIndex(Instances.BEGIN));
+            	long cEnd = c.getLong(c.getColumnIndex(Instances.END));
+            	boolean cIsAllday = c.getInt(c.getColumnIndex(Instances.ALL_DAY))==1;
 
-                calUtil = new CalendarUtil(false, instancesEntity.getEnd());
-                instancesEntity.setEndYear(calUtil.mYear);
-                instancesEntity.setEndMonth(calUtil.mMonth);
-                instancesEntity.setEndMonthDisp((calUtil.mMonth + 1) +"");
-                instancesEntity.setEndDate(calUtil.mDate);
-                instancesEntity.setEndHourOfDay(calUtil.mHourOfDay);
-                instancesEntity.setEndMinute(calUtil.mMinute);
+            	boolean valid = !cIsAllday ||
+            			((begin <= cBegin) && (cBegin < end)) || ((cBegin < begin) && (end <= cEnd));
 
-                instancesEntities.add(instancesEntity);
+            	if(valid) {
+                	InstancesEntity instancesEntity = new InstancesEntity();
+                    instancesEntity.setBegin(cBegin);
+                    instancesEntity.setEnd(cEnd);
+                    instancesEntity.setTitle(c.getString(c.getColumnIndex(Instances.TITLE)));
+                    instancesEntity.setAllDay(cIsAllday);
+                    instancesEntity.setColor(c.getInt(c.getColumnIndex(Instances.CALENDAR_COLOR)));
+                    instancesEntity.setHoliday(c.getString(c.getColumnIndex(Instances.CALENDAR_ID)).equals(holidayCalendarId));
+
+                    CalendarUtil calUtil = new CalendarUtil(
+                            false, instancesEntity.getBegin());
+                    instancesEntity.setBeginYear(calUtil.mYear);
+                    instancesEntity.setBeginMonth(calUtil.mMonth);
+                    instancesEntity.setBeginMonthDisp((calUtil.mMonth + 1) +"");
+                    instancesEntity.setBeginDate(calUtil.mDate);
+                    instancesEntity.setBeginHourOfDay(calUtil.mHourOfDay);
+                    instancesEntity.setBeginMinute(calUtil.mMinute);
+
+                    calUtil = new CalendarUtil(false, instancesEntity.getEnd());
+                    instancesEntity.setEndYear(calUtil.mYear);
+                    instancesEntity.setEndMonth(calUtil.mMonth);
+                    instancesEntity.setEndMonthDisp((calUtil.mMonth + 1) +"");
+                    instancesEntity.setEndDate(calUtil.mDate);
+                    instancesEntity.setEndHourOfDay(calUtil.mHourOfDay);
+                    instancesEntity.setEndMinute(calUtil.mMinute);
+
+                    if(instancesEntity.isHoliday()) {
+                        instancesEntities.add(0, instancesEntity);
+                        hasHoliday = true;
+                    } else if(instancesEntity.isAllDay()) {
+                        instancesEntities.add(!hasHoliday ? 0 : 1, instancesEntity);
+                    } else {
+                        instancesEntities.add(instancesEntity);
+                    }
+            	}
 
             } while (c.moveToNext());
         }
