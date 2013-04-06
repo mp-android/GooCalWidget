@@ -71,7 +71,7 @@
         <item name="android:minHeight">10dip</item>
         <item name="android:textSize">9dip</item>
         <item name="android:scrollHorizontally">true</item>
-        <item name="android:background">#00000000</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="MonthWidget.SpacerXShort" parent="android:Theme">
@@ -167,7 +167,7 @@
         <item name="android:minHeight">10dip</item>
         <item name="android:textSize">9dip</item>
         <item name="android:scrollHorizontally">true</item>
-        <item name="android:background">#00000000</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="WeekWidget.SpacerXShort" parent="android:Theme">
@@ -263,7 +263,7 @@
         <item name="android:minHeight">10dip</item>
         <item name="android:textSize">9dip</item>
         <item name="android:scrollHorizontally">true</item>
-        <item name="android:background">#00000000</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="DayWidget.SpacerXShort" parent="android:Theme">
